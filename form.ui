@@ -19,6 +19,180 @@
   <property name="windowTitle">
    <string>Ssms</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">/* General Application Background */
+QWidget {
+    background-color: #000814; /* Primary Dark */
+    color: #ffd60a; /* Highlight Bright */
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #003566; /* Tertiary Dark */
+    border: 2px solid #001d3d; /* Secondary Dark */
+    border-radius: 8px;
+    color: #ffd60a; /* Highlight Bright */
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #ffc300; /* Accent Bright */
+    color: #001d3d; /* Secondary Dark */
+}
+
+QPushButton:pressed {
+    background-color: #ffd60a; /* Highlight Bright */
+    color: #000814; /* Primary Dark */
+}
+
+/* Labels */
+QLabel {
+    color: #ffd60a; /* Highlight Bright */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Line Edits */
+QLineEdit {
+    background-color: #001d3d; /* Secondary Dark */
+    border: 2px solid #003566; /* Tertiary Dark */
+    border-radius: 5px;
+    color: #ffd60a; /* Highlight Bright */
+    padding: 5px;
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border-color: #ffc300; /* Accent Bright */
+}
+
+/* Text Edits */
+QTextEdit, QPlainTextEdit {
+    background-color: #001d3d; /* Secondary Dark */
+    border: 2px solid #003566; /* Tertiary Dark */
+    border-radius: 5px;
+    color: #ffd60a; /* Highlight Bright */
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* ComboBox */
+QComboBox {
+    background-color: #001d3d; /* Secondary Dark */
+    border: 2px solid #003566; /* Tertiary Dark */
+    border-radius: 5px;
+    color: #ffd60a; /* Highlight Bright */
+    padding: 5px;
+}
+
+QComboBox::drop-down {
+    border: none;
+    background-color: #003566; /* Tertiary Dark */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #001d3d; /* Secondary Dark */
+    color: #ffd60a; /* Highlight Bright */
+    selection-background-color: #ffc300; /* Accent Bright */
+    selection-color: #001d3d; /* Secondary Dark */
+}
+
+/* Scrollbars */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: #001d3d; /* Secondary Dark */
+    border: none;
+    width: 12px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: #ffc300; /* Accent Bright */
+    border-radius: 6px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}
+
+/* Progress Bars */
+QProgressBar {
+    background-color: #001d3d; /* Secondary Dark */
+    border: 2px solid #003566; /* Tertiary Dark */
+    border-radius: 5px;
+    text-align: center;
+    color: #ffd60a; /* Highlight Bright */
+}
+
+QProgressBar::chunk {
+    background-color: #ffc300; /* Accent Bright */
+    width: 20px;
+    margin: 1px;
+}
+
+/* Group Boxes */
+QGroupBox {
+    border: 2px solid #003566; /* Tertiary Dark */
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffd60a; /* Highlight Bright */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 10px;
+    background-color: #000814; /* Primary Dark */
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #ffc300; /* Accent Bright */
+    color: #001d3d; /* Secondary Dark */
+    border: 1px solid #003566; /* Tertiary Dark */
+    padding: 5px;
+}
+
+/* Menus */
+QMenu {
+    background-color: #001d3d; /* Secondary Dark */
+    color: #ffd60a; /* Highlight Bright */
+    border: 2px solid #003566; /* Tertiary Dark */
+}
+
+QMenu::item {
+    padding: 5px 20px;
+    margin: 2px;
+}
+
+QMenu::item:selected {
+    background-color: #ffc300; /* Accent Bright */
+    color: #001d3d; /* Secondary Dark */
+}
+
+/* Tabs */
+QTabWidget::pane {
+    border: 2px solid #003566; /* Tertiary Dark */
+}
+
+QTabBar::tab {
+    background: #001d3d; /* Secondary Dark */
+    border: 1px solid #003566; /* Tertiary Dark */
+    padding: 10px;
+    margin: 2px;
+}
+
+QTabBar::tab:selected {
+    background: #003566; /* Tertiary Dark */
+    color: #ffd60a; /* Highlight Bright */
+}
+</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
    <property name="spacing">
     <number>0</number>
@@ -43,15 +217,18 @@
        <height>0</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="10,0,0,0,0,40">
       <property name="spacing">
-       <number>0</number>
+       <number>15</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -66,33 +243,6 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>HOME</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="text">
-         <string>CLASS</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -106,29 +256,61 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>  HOME       </string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>assets/house-32.png</normaloff>assets/house-32.png</iconset>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="minimumSize">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>0</width>
+          <height>50</height>
          </size>
         </property>
-       </spacer>
+        <property name="text">
+         <string>CLASS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Calender</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton_4">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>Settings</string>
         </property>
        </widget>
       </item>
@@ -163,7 +345,7 @@
          <x>10</x>
          <y>220</y>
          <width>241</width>
-         <height>29</height>
+         <height>51</height>
         </rect>
        </property>
        <property name="text">
