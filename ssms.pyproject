@@ -4,6 +4,7 @@
         "form.ui",
         "ui_form.py",
         "infopage.ui",
-        "ui_infopage.py"
+        "ui_infopage.py",
+        "classtab.ui"
     ]
 }

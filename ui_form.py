@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QPushButton,
-    QSizePolicy, QSpacerItem, QTabWidget, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
+    QPushButton, QSizePolicy, QSpacerItem, QTabWidget,
+    QVBoxLayout, QWidget)
 
 class Ui_Ssms(object):
     def setupUi(self, Ssms):
@@ -81,10 +81,19 @@ class Ui_Ssms(object):
         self.tabWidget.setObjectName(u"tabWidget")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
+        self.addclass = QPushButton(self.tab)
+        self.addclass.setObjectName(u"addclass")
+        self.addclass.setGeometry(QRect(10, 220, 241, 29))
+        self.classlist = QComboBox(self.tab)
+        self.classlist.setObjectName(u"classlist")
+        self.classlist.setGeometry(QRect(10, 20, 881, 161))
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab_3 = QWidget()
+        self.tab_3.setObjectName(u"tab_3")
+        self.tabWidget.addTab(self.tab_3, "")
 
         self.horizontalLayout.addWidget(self.tabWidget)
 
@@ -100,11 +109,13 @@ class Ui_Ssms(object):
 
     def retranslateUi(self, Ssms):
         Ssms.setWindowTitle(QCoreApplication.translate("Ssms", u"Ssms", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
-        self.pushButton_5.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Ssms", u"HOME", None))
+        self.pushButton_5.setText(QCoreApplication.translate("Ssms", u"CLASS", None))
         self.pushButton_6.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
         self.pushButton_4.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
+        self.addclass.setText(QCoreApplication.translate("Ssms", u"cretae class", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Ssms", u"Tab 1", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Ssms", u"Tab 2", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Ssms", u"Page", None))
     # retranslateUi
 

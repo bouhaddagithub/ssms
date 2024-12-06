@@ -68,7 +68,7 @@
       <item>
        <widget class="QPushButton" name="pushButton_3">
         <property name="text">
-         <string>PushButton</string>
+         <string>HOME</string>
         </property>
        </widget>
       </item>
@@ -88,7 +88,7 @@
       <item>
        <widget class="QPushButton" name="pushButton_5">
         <property name="text">
-         <string>PushButton</string>
+         <string>CLASS</string>
         </property>
        </widget>
       </item>
@@ -157,10 +157,38 @@
       <attribute name="title">
        <string>Tab 1</string>
       </attribute>
+      <widget class="QPushButton" name="addclass">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>241</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>cretae class</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="classlist">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>881</width>
+         <height>161</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string>Tab 2</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Page</string>
       </attribute>
      </widget>
     </widget>
