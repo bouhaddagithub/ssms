@@ -9,9 +9,9 @@ from PySide6.QtWidgets import QApplication, QWidget
 #     pyside2-uic form.ui -o ui_form.py
 from ui_form import Ui_Ssms
 from ui_infopage import Ui_Form
-import pandas as pd
+#import pandas as pd
 
-class Teacher:
+"""class Teacher:
     def __init__(self, teacher_id, name, email):
         self.teacher_id = teacher_id
         self.name = name
@@ -75,7 +75,7 @@ class Teacher:
 
     def __str__(self):
         return f"Teacher {self.name}, Email: {self.email}"
-
+"""
 
 class Student:
     def __init__(self, student_id, first_name, last_name):
@@ -103,7 +103,7 @@ class Group:
     def __str__(self):
         return f"Group {self.name} ({self.group_type}) in {self._class.speciality} {self._class.level}"
 
-class Class:
+class Noclass:
     def __init__(self, class_id, speciality, level, year):
         self.class_id = class_id
         self.speciality = speciality
@@ -131,12 +131,12 @@ class Ssms(QWidget):
         self.ui = Ui_Ssms()
         self.ui.setupUi(self)
 
-        self.ui.pushButton.clicked.connect(self.open_info_page)
+        #self.ui.pushButton.clicked.connect(self.open_info_page)
 
     def open_info_page(self):
         self.info_page = InfoPage(self)
         self.info_page.show()
-        self.close()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
