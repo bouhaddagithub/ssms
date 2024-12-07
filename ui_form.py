@@ -16,8 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QPushButton, QSizePolicy, QSpacerItem, QTabWidget,
-    QVBoxLayout, QWidget)
+    QHeaderView, QPushButton, QSizePolicy, QSpacerItem,
+    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_Ssms(object):
     def setupUi(self, Ssms):
@@ -267,20 +268,49 @@ class Ui_Ssms(object):
         self.classlist.setObjectName(u"classlist")
         self.classlist.setGeometry(QRect(10, 20, 881, 161))
         self.tabWidget.addTab(self.tab, "")
+        self.tab_4 = QWidget()
+        self.tab_4.setObjectName(u"tab_4")
+        self.tableWidget = QTableWidget(self.tab_4)
+        if (self.tableWidget.columnCount() < 2):
+            self.tableWidget.setColumnCount(2)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        if (self.tableWidget.rowCount() < 2):
+            self.tableWidget.setRowCount(2)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem3)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(30, 210, 331, 301))
+        self.pushButton = QPushButton(self.tab_4)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(30, 530, 141, 51))
+        self.pushButton_2 = QPushButton(self.tab_4)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(30, 160, 121, 41))
+        self.comboBox = QComboBox(self.tab_4)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(30, 60, 991, 81))
+        self.tabWidget.addTab(self.tab_4, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
         self.tabWidget.addTab(self.tab_3, "")
+        self.tab_5 = QWidget()
+        self.tab_5.setObjectName(u"tab_5")
+        self.tabWidget.addTab(self.tab_5, "")
 
         self.horizontalLayout.addWidget(self.tabWidget)
 
-        self.horizontalLayout.setStretch(1, 1)
 
         self.retranslateUi(Ssms)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Ssms)
@@ -294,7 +324,19 @@ class Ui_Ssms(object):
         self.pushButton_4.setText(QCoreApplication.translate("Ssms", u"Settings", None))
         self.addclass.setText(QCoreApplication.translate("Ssms", u"cretae class", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Ssms", u"Tab 1", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Ssms", u"nom", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Ssms", u"prenom", None));
+        ___qtablewidgetitem2 = self.tableWidget.verticalHeaderItem(0)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("Ssms", u"New Row", None));
+        ___qtablewidgetitem3 = self.tableWidget.verticalHeaderItem(1)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Ssms", u"New Row", None));
+        self.pushButton.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Ssms", u"Page", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Ssms", u"Tab 2", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Ssms", u"Page", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("Ssms", u"Page", None))
     # retranslateUi
 
