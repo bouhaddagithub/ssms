@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QHeaderView, QPushButton, QSizePolicy, QSpacerItem,
-    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFrame,
+    QHBoxLayout, QHeaderView, QPushButton, QSizePolicy,
+    QSpacerItem, QTabWidget, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 class Ui_Ssms(object):
     def setupUi(self, Ssms):
@@ -220,21 +220,21 @@ class Ui_Ssms(object):
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
-        self.pushButton_3 = QPushButton(self.frame)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setMinimumSize(QSize(0, 50))
-        self.pushButton_3.setStyleSheet(u"")
+        self.home = QPushButton(self.frame)
+        self.home.setObjectName(u"home")
+        self.home.setMinimumSize(QSize(0, 50))
+        self.home.setStyleSheet(u"")
         icon = QIcon()
         icon.addFile(u"assets/house-32.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_3.setIcon(icon)
+        self.home.setIcon(icon)
 
-        self.verticalLayout.addWidget(self.pushButton_3)
+        self.verticalLayout.addWidget(self.home)
 
-        self.pushButton_5 = QPushButton(self.frame)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setMinimumSize(QSize(0, 50))
+        self.cls = QPushButton(self.frame)
+        self.cls.setObjectName(u"cls")
+        self.cls.setMinimumSize(QSize(0, 50))
 
-        self.verticalLayout.addWidget(self.pushButton_5)
+        self.verticalLayout.addWidget(self.cls)
 
         self.pushButton_6 = QPushButton(self.frame)
         self.pushButton_6.setObjectName(u"pushButton_6")
@@ -268,33 +268,34 @@ class Ui_Ssms(object):
         self.classlist.setObjectName(u"classlist")
         self.classlist.setGeometry(QRect(10, 20, 881, 161))
         self.tabWidget.addTab(self.tab, "")
-        self.tab_4 = QWidget()
-        self.tab_4.setObjectName(u"tab_4")
-        self.tableWidget = QTableWidget(self.tab_4)
-        if (self.tableWidget.columnCount() < 2):
-            self.tableWidget.setColumnCount(2)
+        self.secondtab = QWidget()
+        self.secondtab.setObjectName(u"secondtab")
+        self.student_table = QTableWidget(self.secondtab)
+        if (self.student_table.columnCount() < 2):
+            self.student_table.setColumnCount(2)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.student_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        if (self.tableWidget.rowCount() < 2):
-            self.tableWidget.setRowCount(2)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem3)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(30, 210, 331, 301))
-        self.pushButton = QPushButton(self.tab_4)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(30, 530, 141, 51))
-        self.pushButton_2 = QPushButton(self.tab_4)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(30, 160, 121, 41))
-        self.comboBox = QComboBox(self.tab_4)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(30, 60, 991, 81))
-        self.tabWidget.addTab(self.tab_4, "")
+        self.student_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.student_table.setObjectName(u"student_table")
+        self.student_table.setGeometry(QRect(30, 210, 341, 301))
+        self.student_table.setEditTriggers(QAbstractItemView.AllEditTriggers)
+        self.create_group_button = QPushButton(self.secondtab)
+        self.create_group_button.setObjectName(u"create_group_button")
+        self.create_group_button.setGeometry(QRect(30, 530, 161, 51))
+        self.loadstudentlistb = QPushButton(self.secondtab)
+        self.loadstudentlistb.setObjectName(u"loadstudentlistb")
+        self.loadstudentlistb.setGeometry(QRect(30, 160, 151, 41))
+        self.group_combo = QComboBox(self.secondtab)
+        self.group_combo.setObjectName(u"group_combo")
+        self.group_combo.setGeometry(QRect(30, 60, 991, 81))
+        self.save_changes_button = QPushButton(self.secondtab)
+        self.save_changes_button.setObjectName(u"save_changes_button")
+        self.save_changes_button.setGeometry(QRect(230, 530, 131, 51))
+        self.add_row_button = QPushButton(self.secondtab)
+        self.add_row_button.setObjectName(u"add_row_button")
+        self.add_row_button.setGeometry(QRect(390, 210, 83, 51))
+        self.tabWidget.addTab(self.secondtab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
         self.tabWidget.addTab(self.tab_2, "")
@@ -310,7 +311,7 @@ class Ui_Ssms(object):
 
         self.retranslateUi(Ssms)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Ssms)
@@ -318,23 +319,21 @@ class Ui_Ssms(object):
 
     def retranslateUi(self, Ssms):
         Ssms.setWindowTitle(QCoreApplication.translate("Ssms", u"Ssms", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Ssms", u"  HOME       ", None))
-        self.pushButton_5.setText(QCoreApplication.translate("Ssms", u"CLASS", None))
+        self.home.setText(QCoreApplication.translate("Ssms", u"  HOME       ", None))
+        self.cls.setText(QCoreApplication.translate("Ssms", u"CLASS", None))
         self.pushButton_6.setText(QCoreApplication.translate("Ssms", u"Calender", None))
         self.pushButton_4.setText(QCoreApplication.translate("Ssms", u"Settings", None))
         self.addclass.setText(QCoreApplication.translate("Ssms", u"cretae class", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Ssms", u"Tab 1", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("Ssms", u"nom", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("Ssms", u"prenom", None));
-        ___qtablewidgetitem2 = self.tableWidget.verticalHeaderItem(0)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("Ssms", u"New Row", None));
-        ___qtablewidgetitem3 = self.tableWidget.verticalHeaderItem(1)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("Ssms", u"New Row", None));
-        self.pushButton.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Ssms", u"PushButton", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Ssms", u"Page", None))
+        ___qtablewidgetitem = self.student_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Ssms", u"Name", None));
+        ___qtablewidgetitem1 = self.student_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Ssms", u"Surname", None));
+        self.create_group_button.setText(QCoreApplication.translate("Ssms", u"create groupe", None))
+        self.loadstudentlistb.setText(QCoreApplication.translate("Ssms", u"Load students", None))
+        self.save_changes_button.setText(QCoreApplication.translate("Ssms", u"save", None))
+        self.add_row_button.setText(QCoreApplication.translate("Ssms", u"add", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.secondtab), QCoreApplication.translate("Ssms", u"Page", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Ssms", u"Tab 2", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Ssms", u"Page", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("Ssms", u"Page", None))
